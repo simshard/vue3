@@ -7,6 +7,19 @@
     <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-    
+    <div id="app">
+        <input type="text"   v-model="greeting">
+   <p> {{greeting}}({{greeting.length}})</p>
+    </div>
+<script > Vue.createApp({
+    data(){
+        return{greeting:'hello world'};
+    },
+    mounted(){
+        setTimeout(() => {
+                    this.greeting = 'Changed after 3s';
+                }, 3000);
+    }
+}).mount('#app'); </script>
 </body>
 </html>
